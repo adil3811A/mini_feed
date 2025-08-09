@@ -23,6 +23,13 @@ class _LoginscreenState extends State<Loginscreen> {
     passWorrdController = TextEditingController();
     super.initState();
   }
+
+  @override
+  void dispose() {
+    emailController!.dispose();
+    passWorrdController!.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
