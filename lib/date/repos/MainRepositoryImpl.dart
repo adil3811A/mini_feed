@@ -22,4 +22,9 @@ class MainRepositoryImpl implements MainRepository{
   void loginUser(String email , String password) {
     remoteDataSource.loginUser(email, password);
   }
+
+  @override
+  void addPost(Post post) {
+    remoteDataSource.addPost(post);
+  }
 }

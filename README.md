@@ -1,16 +1,19 @@
-# mini_feed
+# Mini feed
 
-A new Flutter project.
+## set up:
+You can easy donload project as zip file and open in android studio or vs code and you can run on mobile app or web.
 
-## Getting Started
+I no do as much i can in 6 hour. this is a large project for 6 hours. I sollow guild line which you mention and I profile screen show in artifacts. first what i do. acully feed api call working on web but throw 403 error on android device so I stuck here.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+* Login Screen
+* Feed screen
+* User can post his posts
+* pull refress funcnality.
+* dependency injection.
+* disply ths post as list view.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+what is could not do.
+* offline storing.
+* write test cases.
+* 
