@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+// import 'package:hive/hive.dart';
 import 'package:mini_feed/date/models/Post_Model.dart';
 import 'package:mini_feed/domain/entities/Post.dart';
 
@@ -9,10 +9,10 @@ abstract interface class LocalDataSource{
   void uploadPost(List<PostModel> post);
 }
 
-class LocalDataSourceImple implements LocalDataSource{
-  final Box box;
+// class LocalDataSourceImple implements LocalDataSource{
+  // final Box box;
 
-  LocalDataSourceImple({required this.box});
+/*  LocalDataSourceImple({required this.box});
   @override
   List<PostModel> getPost() {
     List<PostModel> list= [];
@@ -32,6 +32,6 @@ class LocalDataSourceImple implements LocalDataSource{
         box.put(i.toString(), post[i].toJson());
       }
     },);
-  }
+  }*/
 
-}
+// }

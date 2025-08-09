@@ -23,6 +23,9 @@ class _FeedscreenState extends State<Feedscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () {
+
+      },child: Icon(Icons.add),),
       body: BlocBuilder<FeedBloc , FeedState>(
         builder: (context, state) {
           if(state is FeedStateSuccess){
@@ -38,7 +41,7 @@ class _FeedscreenState extends State<Feedscreen> {
             },);
           }
           if(state is FeedStateError){
-            return Text('erros is ${state.message}');
+            return Center(child: Text('errors is ${state.message}'));
           }
           if(state is FeedStateLoading){
             return CircularProgressIndicator();
