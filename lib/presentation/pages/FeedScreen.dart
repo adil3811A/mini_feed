@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:mini_feed/domain/entities/Post.dart';
 import 'package:mini_feed/presentation/bloc/FeedBloc/FeedBloc.dart';
 import 'package:mini_feed/presentation/bloc/FeedBloc/FeedState.dart';
@@ -92,16 +93,22 @@ class _FeedscreenState extends State<Feedscreen> {
       body: BlocBuilder<FeedBloc , FeedState>(
         builder: (context, state) {
           if(state is FeedStateSuccess){
-            return ListView.builder(
-              itemCount: state.posts.length,
-              itemBuilder: (context, index) {
-              final currentPost = state.posts[index];
-              return ListTile(
-                leading: Text(currentPost.id.toString()),
-                title: Text(currentPost.title),
-                subtitle: Text(currentPost.body),
-              );
-            },);
+            return LiquidPullToRefresh(
+              showChildOpacityTransition: false,
+              onRefresh: () async{
+                context.read<FeedBloc>().add(FeedEventLoadPost());
+              },
+              child: ListView.builder(
+                itemCount: state.posts.length,
+                itemBuilder: (context, index) {
+                final currentPost = state.posts[index];
+                return ListTile(
+                  leading: Text(currentPost.id.toString()),
+                  title: Text(currentPost.title),
+                  subtitle: Text(currentPost.body),
+                );
+              },),
+            );
           }
           if(state is FeedStateError){
             return Center(child: Text('errors is ${state.message}'));
